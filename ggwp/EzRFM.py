@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from ggwp.DataModel import DataModel
+import DataModel
 
 class EzRMF(DataModel):
     def __init__(self):

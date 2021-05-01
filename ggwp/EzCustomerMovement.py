@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-from ggwp.DataModel import DataModel
-from ggwp.EzCohort import EzCohort
+import DataModel
+import EzCohort
 
 class EzCustomerMovement(EzCohort):
     def __init__(self):
