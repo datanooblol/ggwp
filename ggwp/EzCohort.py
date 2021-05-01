@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from DataModel import DataModel
+from .datamodel import DataModel
 
 class EzCohort(DataModel):
     def __init__(self):
