@@ -9,7 +9,7 @@ setup(
   author_email = 'data.noob.lol@gmail.com',
   url = 'https://github.com/datanooblol/ggwp',
   # check url everytime you release new version
-  download_url = 'https://github.com/datanooblol/ggwp/archive/refs/tags/v0.02.tar.gz',
+  download_url = f'https://github.com/datanooblol/ggwp/archive/refs/tags/{version}.tar.gz',
   keywords = ['ez','rfm','prep', 'data model', 'cohort', 'customer'],
   # dependencies used in your library
   install_requires=[
