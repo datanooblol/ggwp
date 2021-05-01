@@ -3,7 +3,7 @@ import numpy as np
 
 class EzCheck:
     def __init__(self):
-        self.data='EzCheck'
+        self.prep_data='EzCheck'
 
     def get_null(self, x):
         res = x.isna().sum()
