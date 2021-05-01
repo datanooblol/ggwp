@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from datetime import datetime
 import time
 from .DataModel import DataModel
 from .EzCohort import EzCohort

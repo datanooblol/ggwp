@@ -9,7 +9,7 @@ from distutils.core import setup
 setup(
   name = 'ggwp',
   packages = ['ggwp'],
-  version = '0.0.6',
+  version = '0.0.7',
   license='MIT',
   description = 'Prepare Fast, Analyze Faster',
   # long_description = long_description,
@@ -17,14 +17,12 @@ setup(
   author_email = 'data.noob.lol@gmail.com',
   url = 'https://github.com/datanooblol/ggwp',
   # check url everytime you release new version
-  download_url = 'https://github.com/datanooblol/ggwp/archive/refs/tags/0.0.6.tar.gz',
+  download_url = 'https://github.com/datanooblol/ggwp/archive/refs/tags/0.0.7.tar.gz',
   keywords = ['ez','rfm','prep', 'data model', 'cohort', 'customer'],
   # dependencies used in your library
   install_requires=[
           'numpy',
           'pandas',
-          'datetime',
-          'time'
       ],
   classifiers=[  # Optional
     # How mature is this project? Common values are
