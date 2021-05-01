@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'ggwp',
   packages = ['ggwp'],
-  version = '0.04',
+  version = '0.02',
   license='MIT',
   description = 'Prepare Fast, Analyze Faster',
   author = 'pathompol',
