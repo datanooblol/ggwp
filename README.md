@@ -1,2 +1,2 @@
 # ggwp
-Easy preparation for faster analytics
+Prepare Fast, Analyze Faster
