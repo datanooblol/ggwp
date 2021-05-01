@@ -33,7 +33,7 @@ class EzCustomerMovement(EzCohort):
         self.prep_data = self.prep_data.reset_index()    
 
     def prep_customer_movement(self, data, customerId, orderId, orderDate, salesPrice, date, method):
-        self.prep_data = self.prep_cohort(data, customerId='CustomerID', orderId='InvoiceNo', orderDate='InvoiceDate', salesPrice='spend')
+        self.prep_data = self.prep_cohort(data, customerId=customerId, orderId=orderId, orderDate=orderDate, salesPrice=salesPrice)
         self.get_status()
         self.get_churn()
         return self.prep_data
