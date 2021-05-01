@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-import DataModel
-import EzCohort
+from DataModel import DataModel
+from EzCohort import EzCohort
 
 class EzCustomerMovement(EzCohort):
     def __init__(self):

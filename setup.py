@@ -2,14 +2,14 @@ from distutils.core import setup
 setup(
   name = 'ggwp',
   packages = ['ggwp'],
-  version = '0.06',
+  version = '0.07',
   license='MIT',
   description = 'Prepare Fast, Analyze Faster',
   author = 'pathompol',
   author_email = 'data.noob.lol@gmail.com',
   url = 'https://github.com/datanooblol/ggwp',
   # check url everytime you release new version
-  download_url = 'https://github.com/datanooblol/ggwp/archive/refs/tags/0.06.tar.gz',
+  download_url = 'https://github.com/datanooblol/ggwp/archive/refs/tags/0.07.tar.gz',
   keywords = ['ez','rfm','prep', 'data model', 'cohort', 'customer'],
   # dependencies used in your library
   install_requires=[
