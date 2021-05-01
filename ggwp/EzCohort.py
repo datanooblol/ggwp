@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import time
 from .DataModel import DataModel
 
 class EzCohort(DataModel):
