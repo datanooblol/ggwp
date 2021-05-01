@@ -9,7 +9,7 @@ except(IOError, ImportError):
 setup(
   name = 'ggwp',
   packages = ['ggwp'],
-  version = 'alpha.0.0.1',
+  version = '0.0.1alpha',
   license='MIT',
   description = 'Prepare Fast, Analyze Faster',
   long_description = long_description,
@@ -17,7 +17,7 @@ setup(
   author_email = 'data.noob.lol@gmail.com',
   url = 'https://github.com/datanooblol/ggwp',
   # check url everytime you release new version
-  download_url = 'https://github.com/datanooblol/ggwp/archive/refs/tags/alpha.0.0.1.tar.gz',
+  download_url = 'https://github.com/datanooblol/ggwp/archive/refs/tags/0.0.1alpha.tar.gz',
   keywords = ['ez','rfm','prep', 'data model', 'cohort', 'customer'],
   # dependencies used in your library
   install_requires=[
