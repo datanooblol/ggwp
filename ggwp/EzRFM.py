@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from .DataModel import DataModel
 
-class EzRMF(DataModel):
+class EzRFM(DataModel):
     def __init__(self):
         super().__init__()
         self.prep_data = 'EzRMF'
