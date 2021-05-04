@@ -2,6 +2,7 @@
 setup.cfg
 setup.py
 ggwp\DataModel.py
+ggwp\EzBasketEvolving.py
 ggwp\EzCheck.py
 ggwp\EzCohort.py
 ggwp\EzCustomerMovement.py
