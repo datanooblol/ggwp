@@ -1,7 +1,5 @@
 # ggwp: Prepare Fast, Analyze Faster
 
-|PyPI-Status|
-
 ## What is ggwp?
 
 **ggwp** is a Python package for fast and easy data analytics.  
