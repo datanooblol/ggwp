@@ -77,6 +77,7 @@ class EzCheck:
         return arr
 
     def summary(self, data, method):
+        start = time.time()
         data = data.select_dtypes(method)
         columns = data.columns
         summary_df = pd.DataFrame()
@@ -90,7 +91,7 @@ class EzCheck:
 
             elif method=='datetime':
                 summary_df[col] = self.get_date(data[col])
-
+        print(f'EzCheck for {method} successfully executed {time.time()-start:.2f} ms')
         return summary_df.T.round(4)
 
     def sumNum(self, data, method='number'):

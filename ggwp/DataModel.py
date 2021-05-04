@@ -10,7 +10,14 @@ class DataModel:
         self.orderId = 'orderId'
         self.orderDate = 'orderDate'
         self.salesPrice = 'salesPrice'
-        self.prep_data = 'DataModel'
+
+    @property
+    def clear_cach(self):
+        self.data = None
+
+    @property
+    def echo(self):
+        print('DataModel')
 
     def get_range(self, x):
         return x.max()-x.min()
@@ -74,7 +81,13 @@ class DataModel:
         self.aggregate(data, customerId, orderId, orderDate, salesPrice)
         self.get_date(date)
         self.convert_dtypes()
+        final_df = self.data.copy()
+        self.clear_cach
+        
+        for col, map in zip([customerId, orderId, orderDate, salesPrice],
+        [self.customerId, self.orderId, self.orderDate, self.salesPrice]):
+            print(f"Changed from {col} to {map}")
+        
+        print(f'DataModel successfully executed {time.time()-start:.2f} ms')
 
-        print('successfully preped DataModel {:.4f} ms'.format(time.time()-start))
-
-        return self.data
+        return final_df

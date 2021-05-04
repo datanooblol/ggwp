@@ -4,3 +4,4 @@ from .EzCheck import *
 from .EzCohort import *
 from .EzCustomerMovement import *
 from .EzRFM import *
+from .EzBasketEvolving import *

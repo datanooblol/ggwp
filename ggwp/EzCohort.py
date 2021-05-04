@@ -2,16 +2,27 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import time
-from .DataModel import DataModel
+# from .DataModel import DataModel
 
-class EzCohort(DataModel):
+class EzCohort:
     def __init__(self):
-        super().__init__()
-        self.prep_data = 'EzCohort'
+        self.data = 'EzCohort'
         self.basketDate = 'basketDate'
+        self.customerId = 'customerId'
+        self.orderId = 'orderId'
         self.orderDate = 'orderDate'
+        self.salesPrice = 'salesPrice'
         self.cohortGrp = 'cohortGrp'
         self.cohortIdx = 'cohortIdx'
+        self.frequency = 'frequency'
+
+    @property
+    def clear_cach(self):
+        self.data = None
+
+    @property
+    def echo(self):
+        print('EzCohort')
 
     def get_month(self, x):
         """
@@ -24,7 +35,7 @@ class EzCohort(DataModel):
         column <- column name containing invoice or order date
         return: tuple
         """
-        series = pd.to_datetime(self.prep_data[column])
+        series = pd.to_datetime(self.data[column])
         year = series.dt.year
         month = series.dt.month
         day = series.dt.day
@@ -34,67 +45,73 @@ class EzCohort(DataModel):
         basket_y, basket_m, basket_d = self.get_date_int(self.basketDate)
         cohort_y, cohort_m, cohort_d = self.get_date_int(self.cohortGrp)
         cohort_idx = (12*(basket_y - cohort_y) + (basket_m - cohort_m)) + 1
-        self.prep_data[self.cohortIdx] = cohort_idx
+        self.data[self.cohortIdx] = cohort_idx
 
-    def prep_cohort(self, data, customerId, orderId, orderDate, salesPrice, date='full', method=None):
-        self.prep_data = self.prep(data, customerId, orderId, orderDate, salesPrice)
-        self.prep_data[self.basketDate] = self.prep_data['orderDate'].apply(self.get_month)
-        self.prep_data = self.prep_data.groupby(['customerId', self.basketDate]).agg(
-            frequency=pd.NamedAgg(column='orderId', aggfunc='nunique'),
-            salesPrice=pd.NamedAgg(column='salesPrice', aggfunc='sum')
+    def prep_cohort(self, data, method=None):
+        self.data = data.copy()
+        self.data[self.basketDate] = self.data[self.orderDate].apply(self.get_month)
+        self.data = self.data.groupby([self.customerId, self.basketDate]).agg(
+            frequency=pd.NamedAgg(column=self.orderId, aggfunc='nunique'),
+            salesPrice=pd.NamedAgg(column=self.salesPrice, aggfunc='sum')
         ).reset_index()
-        self.prep_data[self.cohortGrp] = self.prep_data.groupby('customerId')[self.basketDate].transform('min')
+        self.data[self.cohortGrp] = self.data.groupby(self.customerId)[self.basketDate].transform('min')
         self.get_cohort_index()
-        self.prep_data['customerId'] = self.prep_data['customerId'].astype('object')
-        return self.prep_data
+        self.data[self.customerId] = self.data[self.customerId].astype('object')
+        return self.data
 
     def get_cohort_count(self):
-        self.prep_data = pd.pivot_table(self.prep_data, index='cohortGrp',columns='cohortIdx',values='customerId',aggfunc='nunique')
-        return self.prep_data
+        self.data = pd.pivot_table(self.data, index=self.cohortGrp,columns=self.cohortIdx, values=self.customerId, aggfunc='nunique')
+        return self.data
 
     def get_cohort_retention(self):
-        self.prep_data = self.prep_data.divide(self.prep_data.iloc[:,0], axis=0)
-        return self.prep_data
+        self.data = self.data.divide(self.data.iloc[:,0], axis=0)
+        return self.data
 
     def get_cohort_sales(self):
-        res = pd.pivot_table(self.prep_data, index='cohortGrp',columns='cohortIdx',values='salesPrice',aggfunc='sum')
+        res = pd.pivot_table(self.data, index=self.cohortGrp,columns=self.cohortIdx, values=self.salesPrice, aggfunc='sum')
         return res
 
     def get_cohort_frequency(self):
-        res = pd.pivot_table(self.prep_data, index='cohortGrp',columns='cohortIdx',values='frequency',aggfunc='sum')
+        res = pd.pivot_table(self.data, index=self.cohortGrp,columns=self.cohortIdx, values=self.frequency, aggfunc='sum')
         return res
 
     def get_cohort_mean(self):
         total = self.get_cohort_sales()
         freq = self.get_cohort_frequency()
-        self.prep_data = total.divide(freq)
-        return self.prep_data
+        self.data = total.divide(freq)
+        return self.data
 
     def get_melt(self):
-        self.prep_data = self.prep_data.reset_index()
-        self.prep_data = pd.melt(self.prep_data, id_vars=self.cohortGrp)
-        return self.prep_data
+        self.data = self.data.reset_index()
+        self.data = pd.melt(self.data, id_vars=self.cohortGrp)
+        return self.data
 
-    def fit(self, data, customerId, orderId, orderDate, salesPrice, date='full', method='count', melt=False):
+    def fit(self, data, method='count', melt=False):
         """
         method = retention_rate, qty, sales, avg
         """
-        self.prep_cohort(data, customerId, orderId, orderDate, salesPrice, date='full', method=None)
+        start = time.time()
+        self.prep_cohort(data, method=None)
         if method=='count':
-            self.prep_data = self.get_cohort_count()
+            self.data = self.get_cohort_count()
         elif method=='retention':
-            self.prep_data = self.get_cohort_count()
-            self.prep_data = self.get_cohort_retention()
+            self.data = self.get_cohort_count()
+            self.data = self.get_cohort_retention()
         elif method=='sales':
-            self.prep_data = self.get_cohort_sales()
+            self.data = self.get_cohort_sales()
         elif method=='frequency':
-            self.prep_data = self.get_cohort_frequency()
+            self.data = self.get_cohort_frequency()
         elif method=='mean':
             self.get_cohort_mean()
         else:
-            self.prep_data
+            self.data = self.data
 
         if melt==True:
             self.get_melt()
+
+        final_df = self.data
         
-        return self.prep_data.round(2)
+        self.clear_cach
+        print(f'EzCohort successfully executed {time.time()-start:.2f} ms')
+
+        return final_df.round(2)
