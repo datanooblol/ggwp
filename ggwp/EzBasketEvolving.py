@@ -53,13 +53,13 @@ class EzBasketEvolving:
     def fit(self, data, lags=2):
 
         start = time.time()
-        self.data = data
+        self.data = data.sort_values(by=[self.customerId,self.orderDate])
         evol_df = self.prep_evolving(lags=lags)
         evol_df_pct = self.prep_evolving_pct(lags=lags)
 
         final_df = evol_df.merge(evol_df_pct,how='left',left_on=self.customerId,right_on=self.customerId)
         self.clear_cach
 
-        print(f'EzBasketEvolving successfully executed {time.time()-start:.2f} ms')      
+        print(f'EzBasketEvolving successfully executed {time.time()-start:.2f} ms')
 
         return final_df
