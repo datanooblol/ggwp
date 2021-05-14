@@ -6,6 +6,7 @@ ggwp\EzBasketEvolving.py
 ggwp\EzCheck.py
 ggwp\EzCohort.py
 ggwp\EzCustomerMovement.py
+ggwp\EzLog.py
 ggwp\EzRFM.py
 ggwp\__init__.py
 ggwp\run.py
