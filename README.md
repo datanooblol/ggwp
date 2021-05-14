@@ -16,7 +16,8 @@ Here are current features available in **ggwp**:
 -  EzRFM: create RFMT dataset
 -  EzCohort: create Cohort dataset
 -  EzCustomerMovement: create Customer Movement dataset
--  EzBasketEvolving: create Basekt Evolving dataset
+-  EzBasketEvolving: create Basket Evolving dataset
+-  EzLog: log your data status and your remark, so you know what you've done for each stage
 
 ## Where to get **ggwp**  
 The source code is currently hosted GitHub at:  
