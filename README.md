@@ -1,4 +1,4 @@
-# ggwp: Prepare Fast, Analyze Faster
+# ggwp=0.0.12: Prepare Fast, Analyze Faster
 
 ## What is ggwp?
 
