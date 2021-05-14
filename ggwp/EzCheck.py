@@ -41,6 +41,8 @@ class EzCheck:
     def convert_dtypes(self, data,column):
         pass
 
+
+
     def check(self, data, n=4):
         check_df = pd.DataFrame()
         data = data
@@ -57,7 +59,7 @@ class EzCheck:
 
         check_df['outlier'] = self.get_outlier(data)
 
-        return check_df.round(n)
+        return check_df.sort_index().round(n)
 
     def get_num(self,x):
         arr = pd.Series([x.count(),min(x),x.quantile(.25),x.median(),x.mean(),
@@ -75,6 +77,22 @@ class EzCheck:
         arr = pd.Series([x.count(),x.min(),x.max(), x.max()-x.min()],
                         index=['count','min','max','day'])
         return arr
+
+    def get_pattern(self, data, column, method='count'):
+        start = time.time()
+        arr = data[column].astype(str).copy()
+        # EN
+        arr = arr.str.replace(r"[a-zA-Z]","w")
+        # TH
+        arr = arr.str.replace(r"[\u0E00-\u0E7F]",'t')
+        # Digit
+        arr = arr.str.replace(r"[\d]","d")
+        end = time.time()
+        print(f"successfully executed {end-start:.2f} (s)")
+        if method == 'count':
+            return arr.value_counts()
+        else:
+            return arr
 
     def summary(self, data, method):
         start = time.time()
