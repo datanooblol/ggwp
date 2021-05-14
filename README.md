@@ -1,6 +1,9 @@
-# ggwp=0.0.12: Prepare Fast, Analyze Faster  
+# ggwp: Prepare Fast, Analyze Faster  
 [![PyPI Latest Release](https://img.shields.io/pypi/v/ggwp)](https://pypi.org/project/ggwp/) 
 [![Downloads](https://img.shields.io/pypi/dm/ggwp)](https://pypi.org/project/ggwp/)
+[![Repo Size](https://img.shields.io/github/repo-size/datanooblol/ggwp)](https://pypi.org/project/ggwp/)
+<!-- [![License](https://img.shields.io/github/repo-size/datanooblol/ggwp)](https://pypi.org/project/ggwp/) -->
+
 ## What is ggwp?
 
 **ggwp** is a Python package for fast and easy data analytics.  

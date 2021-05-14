@@ -12,7 +12,8 @@ requirements = [
 
 setuptools.setup(
     name="ggwp", 
-    version="0.0.12",
+    version="0.0.13",
+    license='MIT',
     author="Pathompol Nilchaikovit",
     author_email="data.noob.lol@gmail.com",
     description="Prepare Fast, Analyze Faster",
