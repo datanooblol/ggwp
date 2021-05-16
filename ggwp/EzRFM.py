@@ -26,11 +26,11 @@ class EzRFM(EzUtils):
     def echo(self):
         print('EzRFM')
 
-    def get_q1(self,x):
-        return x.quantile(.25)
+    # def get_q1(self,x):
+    #     return x.quantile(.25)
 
-    def get_q3(self,x):
-        return x.quantile(.75)
+    # def get_q3(self,x):
+    #     return x.quantile(.75)
 
     def get_range(self,x):
         return x.max()-x.min()

@@ -4,3 +4,9 @@ class EzUtils:
     
     def hello_world(self):
         print("hello world!!")
+
+    def get_q1(self,x):
+        return x.quantile(.25)
+
+    def get_q3(self,x):
+        return x.quantile(.75)
