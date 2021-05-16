@@ -30,7 +30,7 @@ For Data-Preparation, Modeling, Evaluation:
 -  EzBenchMark: benchmark your models' performances giving you some intuition
 
 ## Where to get **ggwp**  
-The source code is currently hosted GitHub at:  
+The source code is currently hosted at GitHub:  
 https://github.com/datanooblol/ggwp  
 
 The latest version is available at  
