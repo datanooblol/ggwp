@@ -64,5 +64,5 @@ class EzCustomerMovement(EzCohort):
         final_df = self.data
         
         self.clear_cach
-        print(f'EzCustomerMovement successfully executed {time.time()-start:.2f} ms')
+        print('successfully preped EzCustomerMovement{:.4f} ms'.format(time.time()-start))
         return final_df

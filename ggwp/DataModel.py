@@ -3,8 +3,11 @@ import numpy as np
 from datetime import datetime
 import time
 
-class DataModel:
+from .EzUtils import EzUtils
+
+class DataModel(EzUtils):
     def __init__(self):
+        super().__init__()
         self.data = None
         self.customerId = 'customerId'
         self.orderId = 'orderId'
@@ -83,11 +86,10 @@ class DataModel:
         self.convert_dtypes()
         final_df = self.data.copy()
         self.clear_cach
-        
+        print('successfully preped DataModel {:.4f} ms'.format(time.time()-start))
+
         for col, map in zip([customerId, orderId, orderDate, salesPrice],
-        [self.customerId, self.orderId, self.orderDate, self.salesPrice]):
+                            [self.customerId, self.orderId, self.orderDate, self.salesPrice]):
             print(f"Changed from {col} to {map}")
-        
-        print(f'DataModel successfully executed {time.time()-start:.2f} ms')
 
         return final_df

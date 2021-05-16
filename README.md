@@ -2,7 +2,8 @@
 [![PyPI Latest Release](https://img.shields.io/pypi/v/ggwp)](https://pypi.org/project/ggwp/) 
 [![Downloads](https://img.shields.io/pypi/dm/ggwp)](https://pypi.org/project/ggwp/)
 [![Repo Size](https://img.shields.io/github/repo-size/datanooblol/ggwp)](https://pypi.org/project/ggwp/)
-<!-- [![License](https://img.shields.io/github/repo-size/datanooblol/ggwp)](https://pypi.org/project/ggwp/) -->
+[![License](https://img.shields.io/pypi/l/ggwp)](https://pypi.org/project/ggwp/)
+[![Release Date](https://img.shields.io/github/release-date/datanooblol/ggwp)](https://pypi.org/project/ggwp/)
 
 ## What is ggwp?
 
@@ -15,16 +16,21 @@ in the future.
 ## Main Features  
 Here are current features available in **ggwp**:  
 
+For Data-Preparation:
 -  DataModel: prepare your raw data for a general data model
 -  EzCheck: check your data quality
 -  EzRFM: create RFMT dataset
 -  EzCohort: create Cohort dataset
 -  EzCustomerMovement: create Customer Movement dataset
 -  EzBasketEvolving: create Basket Evolving dataset
+
+For Data-Preparation, Modeling, Evaluation:
 -  EzLog: log your data status and your remark, so you know what you've done for each stage
+-  EzEvaluation: evaluate your model using traditional (R2, RMSE, F-1, ACC, ROC) and practical metrics (Cost&Benefit, Lift)
+-  EzBenchMark: benchmark your models' performances giving you some intuition
 
 ## Where to get **ggwp**  
-The source code is currently hosted GitHub at:  
+The source code is currently hosted at GitHub:  
 https://github.com/datanooblol/ggwp  
 
 The latest version is available at  
@@ -37,5 +43,7 @@ pip install ggwp
 
 ## Dependencies  
 
--  NumPy  
+-  numpy  
 -  pandas  
+-  sklearn
+-  xgboost
