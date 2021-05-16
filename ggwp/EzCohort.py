@@ -2,10 +2,12 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import time
-# from .DataModel import DataModel
 
-class EzCohort:
+from .EzUtils import EzUtils
+
+class EzCohort(EzUtils):
     def __init__(self):
+        super().__init__()
         self.data = 'EzCohort'
         self.basketDate = 'basketDate'
         self.customerId = 'customerId'
@@ -88,7 +90,7 @@ class EzCohort:
 
     def fit(self, data, method='count', melt=False):
         """
-        method = retention_rate, qty, sales, avg
+        method = count, retention, sales, frequency, mean
         """
         start = time.time()
         self.prep_cohort(data, method=None)
@@ -112,6 +114,6 @@ class EzCohort:
         final_df = self.data
         
         self.clear_cach
-        print(f'EzCohort successfully executed {time.time()-start:.2f} ms')
+        print('successfully preped EzCohort {:.4f} ms'.format(time.time()-start))
 
         return final_df.round(2)

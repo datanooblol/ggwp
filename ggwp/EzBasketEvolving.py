@@ -3,9 +3,11 @@ import numpy as np
 from datetime import datetime
 import time
 
-class EzBasketEvolving:
+from .EzUtils import EzUtils
 
+class BasketEvolving(EzUtils):
     def __init__(self):
+        super().__init__()
         self.data = None
         self.customerId = 'customerId'
         self.orderId = 'orderId'
@@ -53,13 +55,13 @@ class EzBasketEvolving:
     def fit(self, data, lags=2):
 
         start = time.time()
-        self.data = data.sort_values(by=[self.customerId,self.orderDate])
+        self.data = data
         evol_df = self.prep_evolving(lags=lags)
         evol_df_pct = self.prep_evolving_pct(lags=lags)
 
         final_df = evol_df.merge(evol_df_pct,how='left',left_on=self.customerId,right_on=self.customerId)
         self.clear_cach
-
-        print(f'EzBasketEvolving successfully executed {time.time()-start:.2f} ms')
+        end = time.time()
+        print('successfully preped BasketEvolving {:.4f} ms'.format(time.time()-start))      
 
         return final_df

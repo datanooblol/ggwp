@@ -8,12 +8,14 @@ with open("README.md", "r") as fh:
 requirements = [
     "pandas",
     "numpy",
+    "sklearn",
+    "xgboost",
 ]
 
 
 setuptools.setup(
     name="ggwp", 
-    version="0.0.13",
+    version="0.0.14",
     license='MIT',
     author="Pathompol Nilchaikovit",
     author_email="data.noob.lol@gmail.com",

@@ -3,9 +3,11 @@ import numpy as np
 from datetime import datetime
 import time
 
-class EzRFM:
+from .EzUtils import EzUtils
+
+class EzRFM(EzUtils):
     def __init__(self):
-        # super().__init__()
+        super().__init__()
         self.data = None
         self.date_df = None
         self.snapshot = None
@@ -117,6 +119,6 @@ class EzRFM:
                 rfmt_date = self.prep_rfmt_date(data, column, method_dict[column])
                 rfmt_df = pd.concat([rfmt_df, rfmt_date.drop(self.customerId, axis=1)],axis=1)
         self.clear_cach
-        print(f'EzRFM successfully executed {time.time()-start:.2f} ms')
+        print('successfully preped EzRFM {:.4f} ms'.format(time.time()-start))
 
         return rfmt_df.round(4)
