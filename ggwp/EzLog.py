@@ -1,9 +1,7 @@
 import pandas as pd
 import numpy as np
-from .EzCheck import EzCheck
 
-import pandas as pd
-# from .EzUtils import EzUtils
+from .EzCheck import EzCheck
 
 class EzLog(EzCheck):
     def __init__(self):
@@ -82,7 +80,7 @@ class EzLog(EzCheck):
 
     def get_detail(self, id):
         data = self.log.copy()
-        filter = ['id','remark','n_row','n_col','features']
+        filter = ['id', 'data','remark','n_row','n_col','features']
         data = data.loc[data['id']==id]
         row = data['n_row'].values[0]
         col = data['n_col'].values[0]

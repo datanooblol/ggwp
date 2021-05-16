@@ -11,12 +11,14 @@
 It aims to make a data model that can be applied for some use cases  
 such as customer analytics. The data model created by ggwp is designed  
 directly from my personal experiences, which will be more and more data models  
-in the future.  
+in the future. In addition, **ggwp** now has some new features for  
+logging, modeling and evaluating your models, which of these can speed up your workflow  
+FOR REAL!!
 
 ## Main Features  
-Here are current features available in **ggwp**:  
+Here are current features available in **ggwp**  
 
-For Data-Preparation:
+For Data Modeling: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BcbHZjwNHsxtypOhu9KgddPOY28N5Xtt?usp=sharing)  
 -  DataModel: prepare your raw data for a general data model
 -  EzCheck: check your data quality
 -  EzRFM: create RFMT dataset
@@ -24,7 +26,7 @@ For Data-Preparation:
 -  EzCustomerMovement: create Customer Movement dataset
 -  EzBasketEvolving: create Basket Evolving dataset
 
-For Data-Preparation, Modeling, Evaluation:
+For Logging, Modeling, Evaluation: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uMNnpK-4x8wAq5pVsahWePnKzQNZdClK?usp=sharing)  
 -  EzLog: log your data status and your remark, so you know what you've done for each stage
 -  EzEvaluation: evaluate your model using traditional (R2, RMSE, F-1, ACC, ROC) and practical metrics (Cost&Benefit, Lift)
 -  EzBenchMark: benchmark your models' performances giving you some intuition
@@ -47,3 +49,6 @@ pip install ggwp
 -  pandas  
 -  sklearn
 -  xgboost
+
+## Disclaimer  
+**ggwp** is now in devoping phase. Hence, if you experience any inconveniences, please be patient...

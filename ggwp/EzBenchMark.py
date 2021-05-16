@@ -1,11 +1,18 @@
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.svm import SVC
-from xgboost import XGBClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.dummy import DummyClassifier
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+# from sklearn.svm import SVC
+# from xgboost import XGBClassifier
+# from sklearn.tree import DecisionTreeClassifier
+# from sklearn.dummy import DummyClassifier
+
+from sklearn.linear_model import *
+from sklearn.ensemble import *
+from sklearn.svm import *
+from xgboost import *
+from sklearn.tree import *
+from sklearn.dummy import *
 
 from .EzEvaluation import EzEvaluation
 

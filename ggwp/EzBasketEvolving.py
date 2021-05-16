@@ -5,7 +5,7 @@ import time
 
 from .EzUtils import EzUtils
 
-class BasketEvolving(EzUtils):
+class EzBasketEvolving(EzUtils):
     def __init__(self):
         super().__init__()
         self.data = None
