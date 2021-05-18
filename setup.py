@@ -1,5 +1,6 @@
 import setuptools
-import json
+from resource.config import EzConfig
+# import json
 
 # import configparser
 
@@ -16,8 +17,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
-with open("./resource/config.json") as configfile:
-    version = json.load(configfile)["version"]
+# with open("./resource/config.json") as configfile:
+#     version = json.load(configfile)["version"]
 
 requirements = [
     "pandas",
@@ -26,6 +27,7 @@ requirements = [
     "xgboost",
 ]
 
+version = EzConfig().__version__
 
 setuptools.setup(
     name="ggwp", 
