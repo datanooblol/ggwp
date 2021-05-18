@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+
 from .EzCheck import EzCheck
 
 class EzLog(EzCheck):
@@ -7,10 +9,15 @@ class EzLog(EzCheck):
         self.log = pd.DataFrame()
         self.id = 1
         self.idx = 0
+        self.session = 1
 
     def get_id(self, method):
         if method == 'add':
             self.id += 1
+
+    def get_session(self, method):
+        if method == 'add':
+            self.session += 1
 
     def show(self):
         return self.log
@@ -37,7 +44,8 @@ class EzLog(EzCheck):
                 'remark': remark,
                 'n_row':row,
                 'n_col':col,
-                'features': [columns]
+                'features': [columns],
+                'data':[data.to_dict()]
             },
             index=[idx]
         )
@@ -55,7 +63,7 @@ class EzLog(EzCheck):
         self.log = pd.concat([self.log,single_line_df],axis=0, ignore_index=True)
         return self.log
 
-    def remove(self,id):
+    def remove_id(self,id):
         if self.log.shape[0] == 1:
             self.log = pd.DataFrame()
         elif self.log.shape[0] > 1:
@@ -72,7 +80,7 @@ class EzLog(EzCheck):
 
     def get_detail(self, id):
         data = self.log.copy()
-        filter = ['id','remark','n_row','n_col','features']
+        filter = ['id', 'data','remark','n_row','n_col','features']
         data = data.loc[data['id']==id]
         row = data['n_row'].values[0]
         col = data['n_col'].values[0]
@@ -86,3 +94,7 @@ class EzLog(EzCheck):
         print(f"""remark: {remark}\nn_row, n_col: {row}, {col}""")
 
         return init
+
+    def get_data(self, id):
+        kind_df = pd.DataFrame(self.log.loc[self.log['id']==id, 'data'].values[0])
+        return kind_df
