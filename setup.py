@@ -1,14 +1,14 @@
 import setuptools
 
 
-# import configparser
+import configparser
 
-# config_path = './resource/config.properties'
-# # read config
-# parser = configparser.ConfigParser()
-# parser.read(config_path)
-# config = parser['default']
-# version = config['version']
+config_path = '/resource/config.properties'
+# read config
+parser = configparser.ConfigParser()
+parser.read(config_path)
+config = parser['default']
+version = config['version']
 
 
 # save README.md as var
@@ -26,7 +26,7 @@ requirements = [
 
 setuptools.setup(
     name="ggwp", 
-    version="0.0.21",
+    version=version,
     license='MIT',
     author="Pathompol Nilchaikovit",
     author_email="data.noob.lol@gmail.com",
