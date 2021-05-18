@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 
 # import configparser
 
@@ -10,9 +11,12 @@ import numpy as np
 # config = parser['default']
 # version = config['version']
 
+with open("./resource/config.json") as configfile:
+    version = json.load(configfile)["version"]
+
 class EzUtils:
     def __init__(self):
-        self.__version__ = "0.0.24"
+        self.__version__ = version
     
     def hello_world(self):
         print("hello world!!")

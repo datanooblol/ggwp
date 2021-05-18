@@ -18,23 +18,24 @@ FOR REAL!!
 ## Main Features  
 Here are current features available in **ggwp**  
 
-For Data Modeling: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BcbHZjwNHsxtypOhu9KgddPOY28N5Xtt?usp=sharing)  
+EzDataModel: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BcbHZjwNHsxtypOhu9KgddPOY28N5Xtt?usp=sharing)  
 -  DataModel: prepare your raw data for a general data model
--  EzCheck: check your data quality
--  EzRFM: create RFMT dataset
--  EzCohort: create Cohort dataset
--  EzCustomerMovement: create Customer Movement dataset
--  EzBasketEvolving: create Basket Evolving dataset
+-  RFMT: create RFMT dataset
+-  Cohort: create Cohort dataset
+-  CustomerMovement: create Customer Movement dataset
+-  BasketEvolving: create Basket Evolving dataset  
 
-For Logging, Modeling, Evaluation: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uMNnpK-4x8wAq5pVsahWePnKzQNZdClK?usp=sharing)  
--  EzLog: log your data status and your remark, so you know what you've done for each stage
--  EzEvaluation: evaluate your model using traditional (R2, RMSE, F-1, ACC, ROC) and practical metrics (Cost&Benefit, Lift)
--  EzBenchMark: benchmark your models' performances giving you some intuition
+EzModeling: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uMNnpK-4x8wAq5pVsahWePnKzQNZdClK?usp=sharing)  
+-  Check: check your data quality and more
+-  Log: log your data, its status and your remark, so you know what you've done for each stage
+-  Evaluation: evaluate your model using traditional (R2, RMSE, F-1, ACC, ROC) and practical metrics (Cost&Benefit, Lift)
+-  BenchMark: benchmark your models' performances giving you some intuition  
 
-For Data-preprocessing: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1s4Rkpa53XxWn9GAfKFL9kot7Q44OMRum?usp=sharing)  
+EzPipeline: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1s4Rkpa53XxWn9GAfKFL9kot7Q44OMRum?usp=sharing)  
 
 -  GroupImputer: impute your value with multiple subsets (as you desire)
--  ConvertVariables: convert all of your columns in one command
+-  ConvertVariables: convert all of your columns in one command  
+
 
 ## Where to get **ggwp**  
 The source code is currently hosted at GitHub:  
