@@ -1,38 +1,8 @@
 import setuptools
-# from resource.config import EzConfig
-
-import os, sys
-import json
-
-python_path = os.path.realpath(__file__).split(os.sep)[:-1]
-# print(python_path)
-config_path = python_path + ['resource','config.json']
-config_path = os.sep.join(config_path)
-
-with open(config_path, 'r') as f:
-    version = json.load(f)['version']
-
-# print(version)
-
-# import json
-
-# import configparser
-
-# config_path = './resource/config.properties'
-# # read config
-# parser = configparser.ConfigParser()
-# parser.read(config_path)
-# config = parser['default']
-# version = config['version']
-
 
 # save README.md as var
 with open("README.md", "r") as fh:
     long_description = fh.read()
-
-
-# with open("./resource/config.json") as configfile:
-#     version = json.load(configfile)["version"]
 
 requirements = [
     "pandas",
@@ -41,7 +11,7 @@ requirements = [
     "xgboost",
 ]
 
-# version = EzConfig().__version__
+version = "0.0.28"
 
 
 setuptools.setup(
