@@ -30,7 +30,11 @@ For Logging, Modeling, Evaluation: check out -> [![Open In Colab](https://colab.
 -  EzLog: log your data status and your remark, so you know what you've done for each stage
 -  EzEvaluation: evaluate your model using traditional (R2, RMSE, F-1, ACC, ROC) and practical metrics (Cost&Benefit, Lift)
 -  EzBenchMark: benchmark your models' performances giving you some intuition
--  EzPipeline: integrate pandas with sklearn
+
+For Data-preprocessing: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1s4Rkpa53XxWn9GAfKFL9kot7Q44OMRum?usp=sharing)  
+
+-  GroupImputer: impute your value with multiple subsets (as you desire)
+-  ConvertVariables: convert all of your columns in one command
 
 ## Where to get **ggwp**  
 The source code is currently hosted at GitHub:  
