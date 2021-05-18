@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime
 import time
 
-from .EzUtils import EzUtils
+from ggwp.EzUtils.EzUtils import EzUtils
 
 class DataModel(EzUtils):
     def __init__(self):

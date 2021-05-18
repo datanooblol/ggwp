@@ -3,9 +3,9 @@ import numpy as np
 from datetime import datetime
 import time
 
-from .EzUtils import EzUtils
+from ggwp.EzUtils.EzUtils import EzUtils
 
-class EzCohort(EzUtils):
+class Cohort(EzUtils):
     def __init__(self):
         super().__init__()
         self.data = 'EzCohort'

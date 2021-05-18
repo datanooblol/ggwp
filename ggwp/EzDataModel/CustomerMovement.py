@@ -3,9 +3,9 @@ import numpy as np
 from datetime import datetime
 import time
 # from .DataModel import DataModel
-from .EzCohort import EzCohort
+from ggwp.EzDataModel.Cohort import Cohort
 
-class EzCustomerMovement(EzCohort):
+class CustomerMovement(Cohort):
     def __init__(self):
         super().__init__()
         self.data = 'EzCustomerMovement'
