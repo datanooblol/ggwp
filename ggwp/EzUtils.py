@@ -3,7 +3,7 @@ import numpy as np
 
 import configparser
 
-config_path = '/resource/config.properties'
+config_path = '../resource/config.properties'
 # read config
 parser = configparser.ConfigParser()
 parser.read(config_path)
