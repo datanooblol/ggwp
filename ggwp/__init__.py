@@ -9,4 +9,5 @@ from .EzBasketEvolving import *
 from .EzLog import *
 from .EzEvaluation import *
 from .EzBenchMark import *
-from .EzPipeline import *
+from .EzPipeline.ConvertVariables import *
+from .EzPipeline.GroupImputer import *
