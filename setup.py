@@ -1,5 +1,5 @@
 import setuptools
-
+import json
 
 # import configparser
 
@@ -16,7 +16,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
-version ="0.0.24"
+with open("./resource/config.json") as configfile:
+    version = json.load(configfile)["version"]
 
 requirements = [
     "pandas",
