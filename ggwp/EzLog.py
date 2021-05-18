@@ -1,9 +1,5 @@
 import pandas as pd
-import numpy as np
 from .EzCheck import EzCheck
-
-import pandas as pd
-# from .EzUtils import EzUtils
 
 class EzLog(EzCheck):
     def __init__(self):
@@ -11,15 +7,10 @@ class EzLog(EzCheck):
         self.log = pd.DataFrame()
         self.id = 1
         self.idx = 0
-        self.session = 1
 
     def get_id(self, method):
         if method == 'add':
             self.id += 1
-
-    def get_session(self, method):
-        if method == 'add':
-            self.session += 1
 
     def show(self):
         return self.log
@@ -46,8 +37,7 @@ class EzLog(EzCheck):
                 'remark': remark,
                 'n_row':row,
                 'n_col':col,
-                'features': [columns],
-                'data':[data.to_dict()]
+                'features': [columns]
             },
             index=[idx]
         )
@@ -65,7 +55,7 @@ class EzLog(EzCheck):
         self.log = pd.concat([self.log,single_line_df],axis=0, ignore_index=True)
         return self.log
 
-    def remove_id(self,id):
+    def remove(self,id):
         if self.log.shape[0] == 1:
             self.log = pd.DataFrame()
         elif self.log.shape[0] > 1:
@@ -96,7 +86,3 @@ class EzLog(EzCheck):
         print(f"""remark: {remark}\nn_row, n_col: {row}, {col}""")
 
         return init
-
-    def get_data(self, id):
-        kind_df = pd.DataFrame(self.log.loc[self.log['id']==id, 'data'].values[0])
-        return kind_df

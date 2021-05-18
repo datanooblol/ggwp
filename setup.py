@@ -1,6 +1,5 @@
 import setuptools
 
-# save README.md as var
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -8,14 +7,12 @@ with open("README.md", "r") as fh:
 requirements = [
     "pandas",
     "numpy",
-    "sklearn",
-    "xgboost",
 ]
 
 
 setuptools.setup(
     name="ggwp", 
-    version="0.0.14",
+    version="0.0.13",
     license='MIT',
     author="Pathompol Nilchaikovit",
     author_email="data.noob.lol@gmail.com",

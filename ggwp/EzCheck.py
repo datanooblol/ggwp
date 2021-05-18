@@ -3,11 +3,8 @@ import numpy as np
 from datetime import datetime
 import time
 
-from .EzUtils import EzUtils
-
-class EzCheck(EzUtils):
+class EzCheck:
     def __init__(self):
-        super().__init__()
         self.prep_data='EzCheck'
 
     def get_null(self, x):
@@ -43,6 +40,8 @@ class EzCheck(EzUtils):
 
     def convert_dtypes(self, data,column):
         pass
+
+
 
     def check(self, data, n=4):
         check_df = pd.DataFrame()
