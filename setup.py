@@ -1,20 +1,22 @@
 import setuptools
 
 
-import configparser
+# import configparser
 
-config_path = './resource/config.properties'
-# read config
-parser = configparser.ConfigParser()
-parser.read(config_path)
-config = parser['default']
-version = config['version']
+# config_path = './resource/config.properties'
+# # read config
+# parser = configparser.ConfigParser()
+# parser.read(config_path)
+# config = parser['default']
+# version = config['version']
 
 
 # save README.md as var
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+
+version ="0.0.23"
 
 requirements = [
     "pandas",
