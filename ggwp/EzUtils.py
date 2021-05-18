@@ -1,18 +1,18 @@
 import pandas as pd
 import numpy as np
 
-import configparser
+# import configparser
 
-config_path = './resource/config.properties'
-# read config
-parser = configparser.ConfigParser()
-parser.read(config_path)
-config = parser['default']
-version = config['version']
+# config_path = './resource/config.properties'
+# # read config
+# parser = configparser.ConfigParser()
+# parser.read(config_path)
+# config = parser['default']
+# version = config['version']
 
 class EzUtils:
     def __init__(self):
-        self.__version__ = version
+        self.__version__ = "0.0.20"
     
     def hello_world(self):
         print("hello world!!")
