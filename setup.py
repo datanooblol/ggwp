@@ -8,7 +8,7 @@ config_path = './resource/config.properties'
 parser = configparser.ConfigParser()
 parser.read(config_path)
 config = parser['default']
-version = config['version']
+version = str(config['version'])
 
 
 # save README.md as var
