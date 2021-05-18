@@ -1,7 +1,6 @@
-from resource.config import EzConfig
 import pandas as pd
 import numpy as np
-from resource.config import EzConfig
+# from resource.config import EzConfig
 # import json
 
 # import configparser
@@ -16,9 +15,22 @@ from resource.config import EzConfig
 # with open("./resource/config.json") as configfile:
 #     version = json.load(configfile)["version"]
 
+import os, sys
+import json
+
+python_path = os.path.realpath(__file__).split(os.sep)[:-3]
+# print(python_path)
+config_path = python_path + ['resource','config.json']
+config_path = os.sep.join(config_path)
+
+with open(config_path, 'r') as f:
+    version = json.load(f)['version']
+
+# version = "0.0.26"
+
 class EzUtils:
     def __init__(self):
-        self.__version__ = EzConfig().__version__
+        self.__version__ = version
         pass
     
     def hello_world(self):

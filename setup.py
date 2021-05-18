@@ -1,5 +1,19 @@
 import setuptools
-from resource.config import EzConfig
+# from resource.config import EzConfig
+
+import os, sys
+import json
+
+python_path = os.path.realpath(__file__).split(os.sep)[:-1]
+# print(python_path)
+config_path = python_path + ['resource','config.json']
+config_path = os.sep.join(config_path)
+
+with open(config_path, 'r') as f:
+    version = json.load(f)['version']
+
+# print(version)
+
 # import json
 
 # import configparser
@@ -27,7 +41,8 @@ requirements = [
     "xgboost",
 ]
 
-version = EzConfig().__version__
+# version = EzConfig().__version__
+
 
 setuptools.setup(
     name="ggwp", 
