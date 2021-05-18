@@ -5,12 +5,12 @@ from sklearn.metrics import (classification_report, confusion_matrix, plot_roc_c
 import pandas as pd
 import numpy as np
 
-from .EzLog import EzLog
+from ggwp.EzModeling.Log import Log
 
 import warnings
 warnings.filterwarnings('ignore')
 
-class EzEvaluation(EzLog):
+class Evaluation(Log):
     def __init__(self):
         super().__init__()
 

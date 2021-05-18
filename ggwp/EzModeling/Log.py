@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 
-from .EzCheck import EzCheck
+from ggwp.EzModeling.Check import Check
 
-class EzLog(EzCheck):
+class Log(Check):
     def __init__(self):
         super().__init__()
         self.log = pd.DataFrame()

@@ -14,9 +14,9 @@ from xgboost import *
 from sklearn.tree import *
 from sklearn.dummy import *
 
-from .EzEvaluation import EzEvaluation
+from ggwp.EzModeling.Evaluation import Evaluation
 
-class EzBenchMark(EzEvaluation): 
+class BenchMark(Evaluation): 
     def __init__(self):
         super().__init__()
         self.artifact_ = {}
