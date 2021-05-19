@@ -19,8 +19,6 @@ requirements = [
     "xgboost",
 ]
 
-# version = "0.0.30"
-
 
 setuptools.setup(
     name="ggwp", 
