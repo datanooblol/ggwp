@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-version = "0.0.28"
+version = "0.0.29"
 
 class EzUtils:
     def __init__(self):
