@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 
+
 import configparser
 
-config_path  = './config.cfg'
+config_path  = './EzUtils/config.cfg'
 parser = configparser.ConfigParser()
 parser.read(config_path)
 version = parser['default']['version']
