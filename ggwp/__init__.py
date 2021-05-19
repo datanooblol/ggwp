@@ -19,12 +19,16 @@ from ggwp.EzUtils import *
 
 from ggwp.config.config import *
 
+# -------------------------------------------------------------
 
-# import configparser
 
-# config_path  = './config.cfg'
-# parser = configparser.ConfigParser()
-# parser.read(config_path)
-# version = parser['default']['version']
+import ggwp, os
+current = os.sep.join(ggwp.__file__.split(os.sep)[:-1])
+import configparser
 
-__version__ = "0.0.43"
+config_path  = '{0}/config.cfg'.format(current)
+parser = configparser.ConfigParser()
+parser.read(config_path)
+__version__ = parser['default']['version']
+
+# __version__ = "0.0.43"
