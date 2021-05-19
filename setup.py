@@ -1,14 +1,10 @@
 import setuptools
 
-# from config import config
-
-# version = config().__version__
-
 
 import configparser
 
 
-config_path  = './ggwp/config.cfg'
+config_path  = './ggwp/config/config.cfg'
 parser = configparser.ConfigParser()
 parser.read(config_path)
 version = parser['default']['version']
