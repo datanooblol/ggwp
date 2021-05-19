@@ -18,3 +18,6 @@ from ggwp.EzPipeline.GroupImputer import *
 from ggwp.EzUtils import *
 
 from ggwp.config.config import *
+
+
+__version__ = "0.0.41"
