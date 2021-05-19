@@ -16,3 +16,5 @@ from ggwp.EzPipeline.ConvertVariables import *
 from ggwp.EzPipeline.GroupImputer import *
 
 from ggwp.EzUtils import *
+
+from ggwp.config.config import *

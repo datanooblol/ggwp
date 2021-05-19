@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
 
-version = "0.0.29"
+from ggwp.config.config import EzConfig
+
+version = EzConfig().__version__
 
 class EzUtils:
     def __init__(self):
