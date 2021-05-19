@@ -1,10 +1,6 @@
 import setuptools
-
-# from ggwp.config.config import EzConfig
-
-# version = EzConfig().__version__
-
 import configparser
+
 
 config_path  = './ggwp/config/config.cfg'
 parser = configparser.ConfigParser()
@@ -22,8 +18,6 @@ requirements = [
     "sklearn",
     "xgboost",
 ]
-
-# version = "0.0.33"
 
 setuptools.setup(
     name="ggwp", 
