@@ -1,5 +1,13 @@
 import setuptools
 
+import configparser
+
+config_path  = './resource/config.cfg'
+parser = configparser.ConfigParser()
+parser.read(config_path)
+version = parser['default']['version']
+
+
 # save README.md as var
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -11,7 +19,7 @@ requirements = [
     "xgboost",
 ]
 
-version = "0.0.32"
+# version = "0.0.33"
 
 setuptools.setup(
     name="ggwp", 
@@ -25,6 +33,9 @@ setuptools.setup(
     url="https://github.com/datanooblol/ggwp",
     install_requires=requirements,
     packages=setuptools.find_packages(),
+    package_data={
+        '':['*.cfg']
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
