@@ -8,7 +8,6 @@ version = EzConfig().__version__
 class EzUtils:
     def __init__(self):
         self.__version__ = version
-        pass
     
     def hello_world(self):
         print("hello world!!")
