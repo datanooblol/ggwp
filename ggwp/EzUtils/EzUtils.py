@@ -3,7 +3,7 @@ import numpy as np
 
 import configparser
 
-config_path  = '../config/config.cfg'
+config_path  = './config.cfg'
 parser = configparser.ConfigParser()
 parser.read(config_path)
 version = parser['default']['version']
