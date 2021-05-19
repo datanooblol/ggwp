@@ -1,5 +1,4 @@
 import setuptools
-from ggwp.config.config import EzConfig
 
 # save README.md as var
 with open("README.md", "r") as fh:
@@ -12,7 +11,7 @@ requirements = [
     "xgboost",
 ]
 
-version = EzConfig().__version__
+version = "0.0.31"
 
 
 setuptools.setup(
