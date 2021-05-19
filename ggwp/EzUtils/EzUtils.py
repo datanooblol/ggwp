@@ -1,9 +1,16 @@
 import pandas as pd
 import numpy as np
 
-from ggwp.config.config import EzConfig
+import configparser
 
-version = EzConfig().__version__
+config_path  = './resource/config.cfg'
+parser = configparser.ConfigParser()
+parser.read(config_path)
+version = parser['default']['version']
+
+# from ggwp.config.config import EzConfig
+
+# version = EzConfig().__version__
 
 class EzUtils:
     def __init__(self):
