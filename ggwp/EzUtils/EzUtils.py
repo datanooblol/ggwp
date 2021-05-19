@@ -2,17 +2,17 @@ import pandas as pd
 import numpy as np
 
 
-import pkg_resources
-path = 'EzUtils/config.cfg'
-config_path = pkg_resources.resource_filename(__name__, path)
+# import pkg_resources
+# path = 'EzUtils/config.cfg'
+# config_path = pkg_resources.resource_filename(__name__, path)
 
 
-import configparser
+# import configparser
 
 # config_path  = 'config.cfg'
-parser = configparser.ConfigParser()
-parser.read(config_path)
-version = parser['default']['version']
+# parser = configparser.ConfigParser()
+# parser.read(config_path)
+# version = parser['default']['version']
 
 # from ggwp.config.config import EzConfig
 
@@ -20,7 +20,7 @@ version = parser['default']['version']
 
 class EzUtils:
     def __init__(self):
-        self.__version__ = version
+        self.__version__ = None
     
     def hello_world(self):
         print("hello world!!")
