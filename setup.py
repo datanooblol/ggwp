@@ -11,7 +11,7 @@ requirements = [
     "xgboost",
 ]
 
-version = "0.0.31"
+version = "0.0.30"
 
 
 setuptools.setup(
