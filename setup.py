@@ -1,5 +1,13 @@
 import setuptools
 
+import configparser
+
+config_path = './resource/config.cfg'
+# read config
+parser = configparser.ConfigParser()
+parser.read(config_path)
+version = parser['default']['version']
+
 # save README.md as var
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -11,7 +19,7 @@ requirements = [
     "xgboost",
 ]
 
-version = "0.0.30"
+# version = "0.0.30"
 
 
 setuptools.setup(

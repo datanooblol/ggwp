@@ -4,3 +4,5 @@ dist/
 *.egg-info/
 .ipynb_checkpoints/test_run-checkpoint.ipynb
 test_run.ipynb
+
+test_run.py
