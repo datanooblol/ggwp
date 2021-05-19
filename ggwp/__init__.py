@@ -20,4 +20,11 @@ from ggwp.EzUtils import *
 from ggwp.config.config import *
 
 
+import configparser
+
+config_path  = 'config.cfg'
+parser = configparser.ConfigParser()
+parser.read(config_path)
+version = parser['default']['version']
+
 __version__ = "0.0.41"
