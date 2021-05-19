@@ -1,8 +1,14 @@
 import setuptools
+
+# from config import config
+
+# version = config().__version__
+
+
 import configparser
 
 
-config_path  = './ggwp/config/config.cfg'
+config_path  = './ggwp/EzUtils/config.cfg'
 parser = configparser.ConfigParser()
 parser.read(config_path)
 version = parser['default']['version']
