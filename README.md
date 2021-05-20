@@ -18,20 +18,29 @@ FOR REAL!!
 ## Main Features  
 Here are current features available in **ggwp**  
 
-EzDataModel: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BcbHZjwNHsxtypOhu9KgddPOY28N5Xtt?usp=sharing)  
+```
+from ggwp.EzDataModel import *
+```
+Example codes -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BcbHZjwNHsxtypOhu9KgddPOY28N5Xtt?usp=sharing)  
 -  DataModel: prepare your raw data for a general data model
 -  RFMT: create RFMT dataset
 -  Cohort: create Cohort dataset
 -  CustomerMovement: create Customer Movement dataset
 -  BasketEvolving: create Basket Evolving dataset  
 
-EzModeling: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uMNnpK-4x8wAq5pVsahWePnKzQNZdClK?usp=sharing)  
+```
+from ggwp.EzModeling import *
+```
+Example codes -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uMNnpK-4x8wAq5pVsahWePnKzQNZdClK?usp=sharing)  
 -  Check: check your data quality and more
 -  Log: log your data, its status and your remark, so you know what you've done for each stage
 -  Evaluation: evaluate your model using traditional (R2, RMSE, F-1, ACC, ROC) and practical metrics (Cost&Benefit, Lift)
 -  BenchMark: benchmark your models' performances giving you some intuition  
 
-EzPipeline: check out -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1s4Rkpa53XxWn9GAfKFL9kot7Q44OMRum?usp=sharing)  
+```
+from ggwp.EzPipeline import *
+```
+Example codes -> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1s4Rkpa53XxWn9GAfKFL9kot7Q44OMRum?usp=sharing)  
 
 -  GroupImputer: impute your value with multiple subsets (as you desire)
 -  ConvertVariables: convert all of your columns in one command  
