@@ -21,11 +21,15 @@ from ggwp.config.config import *
 
 # -------------------------------------------------------------
 
-import ggwp, os
-import configparser
+# import ggwp, os
+# import configparser
 
-current = os.sep.join(ggwp.__file__.split(os.sep)[:-1])
-config_path  = '{0}/config/config.cfg'.format(current)
-parser = configparser.ConfigParser()
-parser.read(config_path)
-__version__ = parser['default']['version']
+# current = os.sep.join(ggwp.__file__.split(os.sep)[:-1])
+# config_path  = '{0}/config/config.cfg'.format(current)
+# parser = configparser.ConfigParser()
+# parser.read(config_path)
+# __version__ = parser['default']['version']
+
+# from ggwp.config.config import EzConfig
+
+__version__ = EzConfig().get_config(section='default',key='version')

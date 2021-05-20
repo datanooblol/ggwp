@@ -1,6 +1,4 @@
 import setuptools
-
-
 import configparser
 
 
