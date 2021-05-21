@@ -16,11 +16,12 @@ class DataFrameTransformer():
         return self
 
     def transform(self, X, **transform_params):
+        data = X.copy()
         if self.source_columns != None:
-            X = self.func(X, self.source_columns)
+            data = self.func(data, self.source_columns)
         else:
-            X = self.func(X)
-        return X
+            data = self.func(data)
+        return data
 
     def execute(self, X):
         self.fit(X)

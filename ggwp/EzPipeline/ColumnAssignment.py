@@ -17,8 +17,9 @@ class ColumnAssignment():
         return self
 
     def transform(self, X, **transform_params):
-        X[self.target_column] = self.func(X, self.source_columns)
-        return X
+        data = X.copy()
+        data[self.target_column] = self.func(data, self.source_columns)
+        return data
 
     def execute(self, X):
         self.fit(X)
