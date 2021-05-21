@@ -44,6 +44,9 @@ Example codes -> [![Open In Colab](https://colab.research.google.com/assets/cola
 
 -  GroupImputer: impute your value with multiple subsets (as you desire)
 -  ConvertVariables: convert all of your columns in one command  
+-  ColumnAssignment: adding a new column in your pipeline is now available  
+-  OneHotTransformer: the brand-new One-Hot-Encoding is now at your service
+-  DataFrameTransformer: write your own function and use it along with your pipeline seamlessly
 
 
 ## Where to get **ggwp**  
