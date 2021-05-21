@@ -33,11 +33,12 @@ class OneHotTransformer():
         return self
 
     def transform(self, X, **transform_params):
+        data = X.copy()
         unique_values = self.get_unique(X)
         if unique_values !=  self.unique_values:
             raise ValueError("New values did not match. Please re-check your data again")
         else:
-            return self.get_onehot(X)
+            return self.get_onehot(data)
 
 
     def execute(self, X):
