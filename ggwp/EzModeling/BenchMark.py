@@ -107,7 +107,7 @@ class BenchMark(Evaluation):
         # return model_artifacts, model_results
         return model_artifacts
 
-    def benchmark(self, X_train, y_train, X_test, y_test, model_dict, remark, kind):
+    def benchmark(self, X_train, y_train, X_test, y_test, model_dict, remark, kind, cost, benefit):
         
         # model_artifacts, model_results  = self.train_model(X_train, y_train, X_test, y_test, model_dict)
         model_artifacts = self.train_model(X_train, y_train, X_test, y_test, model_dict)
@@ -115,7 +115,7 @@ class BenchMark(Evaluation):
         for model_name, artifact in model_artifacts.items():
 
             if kind == 'classification':
-                performance = self.get_classification_report(model_name,y_test,artifact.predict_proba(X_test)[:,1],cost=0,benefit=0)
+                performance = self.get_classification_report(model_name,y_test,artifact.predict_proba(X_test)[:,1],cost=cost,benefit=benefit)
             elif kind == 'regression':
                 performance = self.get_regression_report(model_name,y_test,artifact.predict(X_test))
 
@@ -125,8 +125,8 @@ class BenchMark(Evaluation):
         self.get_session(method='add')
 
 
-    def classification_benchmark(self, X_train, y_train, X_test, y_test, model_dict, remark='nope'):
-        self.benchmark(X_train, y_train, X_test, y_test, model_dict, remark=remark, kind='classification')
+    def classification_benchmark(self, X_train, y_train, X_test, y_test, model_dict, cost=0, benefit=0,remark='nope'):
+        self.benchmark(X_train, y_train, X_test, y_test, model_dict, remark=remark, kind='classification', cost=cost, benefit=benefit)
         return self.log
 
     def regression_benchmark(self, X_train, y_train, X_test, y_test, model_dict, remark='nope'):    
